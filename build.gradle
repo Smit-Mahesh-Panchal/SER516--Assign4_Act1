@@ -33,3 +33,12 @@ tasks.register('testFast', Test) {
 		includeTestsMatching 'edu.asu.assign4.rest.grocery.controllers.GroceryApi2ApplicationTests'
 	}
 }
+
+tasks.register('testSlow', Test) {
+	useJUnitPlatform() //
+	testClassesDirs = sourceSets.test.output.classesDirs
+	classpath = sourceSets.test.runtimeClasspath
+	filter {
+		includeTestsMatching 'edu.asu.assign4.rest.grocery.controllers.GroceryControllerTest2'
+	}
+}
